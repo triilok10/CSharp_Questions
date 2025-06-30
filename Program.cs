@@ -13,16 +13,19 @@ namespace csharp
 
             string original = "Trilok";
 
-            string vowels = "aeiouAEIOUqwqw"; 
+            string vowels = "aeiouAEIOUqwqw";
             p.CountVowets(vowels);
+            
 
             // Call (hit) the ReverseString method
             string reversed = p.ReverseString(original);
+            int count = p.FionacciSeries(20);
 
             // Display result
             Console.WriteLine("Original String: " + original);
             Console.WriteLine("Reversed String: " + reversed);
             Console.WriteLine("Total count of the Vowels: " + vowels);
+            Console.WriteLine("Total Count of the Fiboconni: " + vowels);
         }
 
         // Reverse a string and return the result
@@ -43,7 +46,7 @@ namespace csharp
         {
             int count = 0;
 
-            for (int i=0; i< inputstring.Length; i++)
+            for (int i = 0; i < inputstring.Length; i++)
             {
                 char c = inputstring[i];
                 if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
@@ -53,6 +56,24 @@ namespace csharp
                 }
             }
             return count;
+        }
+
+        // Fionacci Series
+        public int FionacciSeries(int n)
+        {
+            int a = 0;
+            int b = 1;
+            int c = 0;
+            Console.WriteLine("Fibonacci Series up to " + n + ":");
+            Console.Write(a + " " + b + " ");
+            for (int i = 0; i < n; i++)
+            {
+                c = a + b;
+                Console.Write(c + " ");
+                a = b;
+                b = c;
+            }
+            return c;
         }
     }
 }
