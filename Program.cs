@@ -9,8 +9,12 @@ namespace csharp
             Console.WriteLine("Hello, World!");
             Program p = new Program();
 
-            // Input string
+
+
             string original = "Trilok";
+
+            string vowels = "aeiouAEIOUqwqw"; 
+            p.CountVowets(vowels);
 
             // Call (hit) the ReverseString method
             string reversed = p.ReverseString(original);
@@ -18,6 +22,7 @@ namespace csharp
             // Display result
             Console.WriteLine("Original String: " + original);
             Console.WriteLine("Reversed String: " + reversed);
+            Console.WriteLine("Total count of the Vowels: " + vowels);
         }
 
         // Reverse a string and return the result
@@ -31,6 +36,23 @@ namespace csharp
             }
 
             return reverseString;
+        }
+
+        // Count Vowers in the String
+        public int CountVowets(string inputstring)
+        {
+            int count = 0;
+
+            for (int i=0; i< inputstring.Length; i++)
+            {
+                char c = inputstring[i];
+                if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
+                    c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U')
+                {
+                    count++;
+                }
+            }
+            return count;
         }
     }
 }
