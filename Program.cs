@@ -21,6 +21,8 @@ namespace csharp
             string reversed = p.ReverseString(original);
             int count = p.FionacciSeries(20);
 
+            bool isLeap = p.IsLeapYear(2025);
+
             // Display result
             Console.WriteLine("Original String: " + original);
             Console.WriteLine("Reversed String: " + reversed);
@@ -75,5 +77,20 @@ namespace csharp
             }
             return c;
         }
+
+        // Check Leap Year
+        public bool IsLeapYear(int year)
+        {
+            if (year % 4 == 0)
+            {
+                if (year % 100 == 0)
+                {
+                    return (year % 400 == 0);
+                }
+                return true;
+            }
+            return false;
+        }
+
     }
 }
