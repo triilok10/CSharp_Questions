@@ -15,13 +15,20 @@ namespace csharp
 
             string vowels = "aeiouAEIOUqwqw";
             p.CountVowets(vowels);
-            
+
 
             // Call (hit) the ReverseString method
             string reversed = p.ReverseString(original);
             int count = p.FionacciSeries(20);
 
             bool isLeap = p.IsLeapYear(2025);
+
+
+            // For Swap of the Two variables
+            int a = 12;
+            int b = 4;
+
+            p.swapVariable(ref a, ref b);
 
             // Display result
             Console.WriteLine("Original String: " + original);
@@ -90,6 +97,16 @@ namespace csharp
                 return true;
             }
             return false;
+        }
+
+
+        //Swap two variables without using the 3rd variables.
+
+        public void swapVariable(ref int a,ref int b)
+        {
+            a = a + b;
+            b = a - b;
+            a = a - b;
         }
 
     }
